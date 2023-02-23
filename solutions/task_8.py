@@ -1,19 +1,15 @@
-TO_THE_RIGHT = "RIGHT"
-TO_THE_LEFT = "LEFT"
-
-
-k = int(input())
 n = int(input())
+k = int(input())
 petya_row = int(input())  # starting from 1
-petya_place_name = input()  # one of the TO_THE_RIGHT or TO_THE_LEFT constants
-petya_place = 0 if petya_place_name == TO_THE_RIGHT else 1
+petya_place = int(input())
+petya_place -= 1
 
 petya_position = 2*(petya_row-1) + 1 + petya_place
 
 row_count = (n+1) // 2
 
 best_row = 0
-best_place_name = ""
+best_place = ""
 
 for pos in (petya_position - k, petya_position + k):
     row = (pos+1) // 2
@@ -25,9 +21,9 @@ for pos in (petya_position - k, petya_position + k):
     best_diff = abs(petya_row - best_row)
     if pos_valid and (not best_row or diff <= best_diff):
         best_row = row
-        best_place_name = TO_THE_RIGHT if place == 0 else TO_THE_LEFT
+        best_place = place
 
 if best_row:
-    print(best_row, best_place_name)
+    print(best_row, best_place+1)
 else:
     print(-1)

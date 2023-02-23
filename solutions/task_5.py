@@ -6,6 +6,7 @@ def solve(a, b):
     else:
         return "NO"
 
+
 if __name__ == '__main__':
     a = int(input())
     b = int(input())

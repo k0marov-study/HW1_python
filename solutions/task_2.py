@@ -1,3 +1,10 @@
+"""
+If two points lie in the same quarter, 
+the signs of their respective x and y coordinates 
+must be equal.
+"""
+
+
 def solve(x1, y1, x2, y2):
     same_quarter = (x1 > 0) == (x2 > 0) and (y1 > 0) == (y2 > 0)
 

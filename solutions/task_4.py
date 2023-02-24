@@ -1,34 +1,39 @@
-arabic = int(input())
-roman = ''
 
-if arabic >= 100:
-    roman += 'C'
-    arabic -= 100
-if arabic >= 90:
-    roman += 'XC'
-    arabic -= 90
-if arabic >= 50:
-    roman += 'L'
-    arabic -= 50
-if arabic >= 40:
-    roman += 'XL'
-    arabic -= 40
+def solve(arabic):
+    roman = ''
 
-roman += 'X' * (arabic // 10)
-arabic %= 10
+    if arabic >= 100:
+        roman += 'C'
+        arabic -= 100
+    if arabic >= 90:
+        roman += 'XC'
+        arabic -= 90
+    if arabic >= 50:
+        roman += 'L'
+        arabic -= 50
+    if arabic >= 40:
+        roman += 'XL'
+        arabic -= 40
 
-if arabic == 9:
-    roman += 'IX'
-    arabic -= 9
-if arabic == 4:
-    roman += 'IV'
-    arabic -= 4
+    roman += 'X' * (arabic // 10)
+    arabic %= 10
 
-if arabic >= 5:
-    roman += 'V'
-    arabic -= 5
+    if arabic == 9:
+        roman += 'IX'
+        arabic -= 9
+    if arabic == 4:
+        roman += 'IV'
+        arabic -= 4
 
-roman += 'I'*arabic
+    if arabic >= 5:
+        roman += 'V'
+        arabic -= 5
+
+    roman += 'I'*arabic
+
+    return roman
 
 
-print(roman)
+if __name__ == '__main__':
+    arabic = int(input())
+    print(solve(arabic))

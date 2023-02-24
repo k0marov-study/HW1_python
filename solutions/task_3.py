@@ -10,14 +10,14 @@ n = int(input())
 big_amount = n // BIG
 n %= BIG
 
-if BIG_CHEAPER_MIDDLE <= n < BIG:
+if n >= BIG_CHEAPER_MIDDLE:
     n = 0
     big_amount += 1
 
 middle_amount = n // MIDDLE
 n %= MIDDLE
 
-if MIDDLE_CHEAPER_SMALL <= n < MIDDLE:
+if n >= MIDDLE_CHEAPER_SMALL:
     n = 0
     middle_amount += 1
 
